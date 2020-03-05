@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrarModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating"> Titulo</ion-label>
+      <ion-input [(ngModel)]="titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-img src="https://pbs.twimg.com/profile_images/1155618498267275265/p1Yz8s64_400x400.jpg "  style="width: 100%; height: auto"> </ion-img>
+    </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full">
+          <ion-icon name="images-outline"></ion-icon>
+          Galeria
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full">
+          <ion-icon name="camera-outline"></ion-icon>
+          Camara
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

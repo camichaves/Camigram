@@ -5,12 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import {SubirPage} from '../pages/subir/subir.page';
+import {SubirPageModule} from '../pages/subir/subir.module';
 
 @NgModule({
+  entryComponents: [ SubirPage],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+      SubirPageModule,
     RouterModule.forChild([
       {
         path: '',
