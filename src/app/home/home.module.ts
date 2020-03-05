@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import {SubirPage} from '../pages/subir/subir.page';
 import {SubirPageModule} from '../pages/subir/subir.module';
+// tENGO QUE IMPORTAR DE ALGUNA MANERA EL PIPE
 
 @NgModule({
   entryComponents: [ SubirPage],

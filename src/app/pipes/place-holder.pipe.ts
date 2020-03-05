@@ -5,8 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PlaceHolderPipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
-    return null;
+  transform(value: string, defecto: string = 'NuevoPost'): any {
+    if (value) {
+      return value;
+    } else {
+      return defecto;
+    }
   }
 
 }
