@@ -13,7 +13,7 @@ import {Observable} from 'rxjs';
 export class HomePage implements AfterViewInit {
 
     // tslint:disable-next-line:ban-types
-    homePosts: Post[] = [];
+    homePosts: any = [];
     constructor( private modalController: ModalController, private cargarPostsService: CargarPostsService) {}
 
     async mostrarModal() {
