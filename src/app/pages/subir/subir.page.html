@@ -1,4 +1,6 @@
 <ion-header>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="cerrarModal()">
@@ -6,6 +8,12 @@
       </ion-button>
     </ion-buttons>
     <ion-title> Nuevo Post</ion-title>
+<!--    <ion-buttons slot="end" *ngIf="titulo != '' && imgPreview != null">-->
+    <ion-buttons slot="end">
+      <ion-button (click)="subirPost()" color="primary" [disabled]="titulo == '' || imgPreview == null">
+        Subir
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,24 +24,29 @@
       <ion-input [(ngModel)]="titulo"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-img src="https://pbs.twimg.com/profile_images/1155618498267275265/p1Yz8s64_400x400.jpg "  style="width: 100%; height: auto"> </ion-img>
+    <ion-item *ngIf="imgPreview != null">
+      <ion-img [src]="imgPreview"  style="width: 100%; height: auto"> </ion-img>
     </ion-item>
   </ion-list>
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-button expand="full">
+        <ion-button expand="full" (click)="abrirGaleria()">
           <ion-icon name="images-outline"></ion-icon>
           Galeria
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="full">
+        <ion-button expand="full" (click)="abrirCamara()">
           <ion-icon name="camera-outline"></ion-icon>
           Camara
         </ion-button>
       </ion-col>
+    </ion-row>
+    <ion-row>
+     <ion-col>
+        <ion-button *ngIf="imgPreview != null" expand="full" (click)="subirPost()">Subir</ion-button>
+     </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

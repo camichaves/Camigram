@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCuuhUfDuSlbXn5zaUU87qrwvSiA_5Pk8U',
+    authDomain: 'camigram-9a260.firebaseapp.com',
+    databaseURL: 'https://camigram-9a260.firebaseio.com',
+    projectId: 'camigram-9a260',
+    storageBucket: 'camigram-9a260.appspot.com',
+    messagingSenderId: '290808782650',
+    appId: '1:290808782650:web:b000a15f2b459dad90ba03',
+    measurementId: 'G-3EN547QMH7'
+  }
 };
 
 /*

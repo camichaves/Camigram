@@ -10,12 +10,12 @@ export class CargarPostsService {
 
   constructor( private httpClient: HttpClient) { }
 
-  cargar() {
+  cargar( pagina: number) {
     const httpOptions = { headers: new HttpHeaders({
         // tslint:disable-next-line:max-line-length
-        Authorization: 'Bearer ' + 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU4MzUwMTg5Mn0.gRewk-PHI7nUZ5pQEMNBP6lp5JIkR3wX6MiiJNkEVpCMQyISPzETq-JfwCGCWj1giWbgDKusz65SwT6IzEPZJQ'
+        Authorization: 'Bearer ' + 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTU4NzIzNDMyMH0.ThO0D-dBGzdWwkwFhIutk_eaX-60qhsPmoO1EC40o9BETEPvfCuD3uGhpVMT77j8BvUworh4rrsg4kkRIZVwNw'
       })};
-    return this.httpClient.get('http://localhost:8080/api/posts', httpOptions).pipe(
+    return this.httpClient.get('http://localhost:8080/api/posts?page=' + pagina + '&size=3&sort=id%2Cdesc', httpOptions).pipe(
         catchError(err => {
           console.log('Errorrrrrrrrr');
           console.log(JSON.stringify(err));
