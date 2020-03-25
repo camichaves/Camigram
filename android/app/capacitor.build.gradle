@@ -12,6 +12,7 @@ dependencies {
 
     implementation "com.android.support:support-v4:27.+"
     implementation "com.android.support:appcompat-v7:23+"
+    implementation "com.android.support:support-v4:27.+"
 }
 apply from: "../../node_modules/cordova-plugin-telerik-imagepicker/src/android/ignorelinterrors.gradle"
 apply from: "../../node_modules/cordova-plugin-telerik-imagepicker/src/android/androidtarget.gradle"

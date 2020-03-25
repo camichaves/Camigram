@@ -1,21 +1,19 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {environment} from '../../environments/environment.prod';
+import {throwError} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CargarPostsService {
+
+export class AutenticarService {
 
   constructor( private httpClient: HttpClient) { }
 
-  cargar( pagina: number) {
-    const httpOptions = { headers: new HttpHeaders({
-        // tslint:disable-next-line:max-line-length
-        Authorization: 'Bearer ' + environment.token})};
-    return this.httpClient.get('http://3.19.167.71:8080/api/posts?page=' + pagina + '&size=3&sort=id%2Cdesc', httpOptions).pipe(
+  iniciar() {
+      let user = new User('user', 'user');
+      return this.httpClient.post('http://3.19.167.71:8080/api/authenticate', user ).pipe(
         catchError(err => {
           console.log('Errorrrrrrrrr');
           console.log(JSON.stringify(err));
@@ -24,4 +22,13 @@ export class CargarPostsService {
         })
     );
   }
+    }
+export class User {
+    private username;
+    private password;
+    constructor(name: string, pass: string) {
+        this.username = name;
+        this.password = pass;
+    }
 }
+

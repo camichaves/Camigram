@@ -12,6 +12,8 @@ export class SubirPage implements OnInit {
   titulo: string;
   imgPreview: string;
   imgBase: string;
+  device: string;
+  imgWeb: string = null;
 
   cameraOptions: CameraOptions = {
     quality: 40,
@@ -33,6 +35,9 @@ export class SubirPage implements OnInit {
     if (!this.platform.is('cordova')) {
       // tslint:disable-next-line:max-line-length
       this.imgPreview = null;
+      this.device = 'web';
+    } else {
+        this.device = 'mobile';
     }
   }
 

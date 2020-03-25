@@ -15,6 +15,7 @@ import { File } from '@ionic-native/file/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import {SubirPostService} from './service/subir-post.service';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import {AutenticarService} from './services/autenticar.service';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
       ToastController,
       LoadingController,
       SocialSharing,
+      AutenticarService,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
   ],
   exports: [
